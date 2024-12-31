@@ -70,7 +70,7 @@ const Displayer = ({ D1, D0, H1, H0, M1, M0, S1, S0 }) => {
 const T1 = () => {
   return (
     <div
-      className={`${pacifico.className} text-[20px] sm:text-[40px] md:text-[50px] text-center mb-10`}
+      className={`${pacifico.className} text-[40px] sm:text-[40px] md:text-[50px] text-center mb-10`}
     >
       See? The year's gonna end in
     </div>
@@ -81,11 +81,11 @@ const T2 = () => {
   const confettiRef = useRef();
   return (
     <div
-      className={`${anton.className} text-[20px] sm:text-[40px] md:text-[70px] text-center mb-10`}
+      className={`${anton.className} text-[30px] sm:text-[40px] md:text-[70px] text-center mb-5`}
     >
       🎉 HAPPY NEW YEAR! 🎉
       <div
-        className={`${anton.className} text-[20px] sm:text-[40px] md:text-[80px] text-center mb-10`}
+        className={`${anton.className} text-[40px] sm:text-[40px] md:text-[80px] text-center `}
         style={{
           backgroundImage: 'linear-gradient(to right, #c2e59c, #64b3f4)',
           backgroundClip: 'text',
@@ -140,7 +140,7 @@ export default function Home() {
             clearInterval(jump);
             setText(<T2 />);
           } else {
-            
+
             setCounter(newDate);
             setText(<T1 />);
           }
@@ -186,12 +186,14 @@ export default function Home() {
           S0={counter ? String(59 - counter.getSeconds()).padStart(2, '0')[1] : '0'}
         />
         <div
-          className={`${pacifico.className} text-[18px] sm:text-[30px] md:text-[40px] mt-10 mb-5 text-center`}
+          className={`${pacifico.className} text-[25px] sm:text-[30px] md:text-[40px] mt-10 mb-5 text-center`}
         >
           Click to see the memories we made in 2024
         </div>
 
-        <audio ref={bg} src="/assets/rick.mp3" type="audio/mp3" controls className="hidden" />
+        <audio ref={bg} src="/assets/rick.mp3" type="audio/mp3" controls className="hidden" onEnded={()=>{
+          bg.current.play();
+        }} />
 
         <button
           onClick={() => {

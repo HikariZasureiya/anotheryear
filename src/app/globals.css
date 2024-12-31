@@ -14,28 +14,46 @@
   font-display: swap; /* Ensures that the font is displayed properly */
 }
 
+/* Default theme (Light Mode) */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --button-bg: rgb(186, 0, 243);
+  --button-hover-bg: rgba(186, 0, 243, 0.7);
+  --text-shadow: 2px 2px 50px rgba(186, 0, 243, 0.801);
+  --button-border: rgb(186, 0, 243);
 }
 
+/* Dark theme overrides */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --button-bg: rgba(186, 0, 243, 0.7);
+    --button-hover-bg: rgba(186, 0, 243, 1);
+    --text-shadow: 2px 2px 50px rgba(186, 0, 243, 0.9);
+    --button-border: rgba(186, 0, 243, 0.7);
   }
 }
 
+/* Apply the global styles */
+body {
+  background: var(--background); /* Background color based on the theme */
+  color: var(--foreground); /* Text color based on the theme */
+  font-family: 'Pacifico', serif, Arial, Helvetica, sans-serif; /* Correct font-family */
+}
+
+/* Styling for the credbutton */
 .credbutton {
   height: 50px;
   width: 150px;
   border-radius: 5px;
   font-size: 20px;
   background-color: transparent;
-  border: 1px solid rgb(186, 0, 243);
-  text-shadow: 2px 2px 50px rgba(186, 0, 243, 0.801);
-  color: rgb(186, 0, 243);
-  box-shadow: 0px 0px 10px rgba(186, 0, 243, 0.5);
+  border: 1px solid var(--button-border); /* Use button-border variable */
+  text-shadow: var(--text-shadow); /* Use text-shadow variable */
+  color: var(--button-bg); /* Text color based on the theme */
+  box-shadow: 0px 0px 10px var(--button-bg);
   cursor: pointer;
   position: relative;
   overflow: hidden; /* Ensures that the pseudo-element doesn't overflow outside the button */
@@ -50,7 +68,7 @@
   left: 0;
   width: 0%; /* Start width at 0 */
   height: 100%;
-  background-color: rgb(186, 0, 243);
+  background-color: var(--button-bg); /* Use button-bg variable */
   border-radius: 5px;
   transition: width 300ms ease-in-out;
   z-index: -1; /* Ensure it stays behind the button text */
@@ -61,12 +79,6 @@
 }
 
 .credbutton:hover {
-  color: black; /* Text color change */
-  box-shadow: 0px 0px 15px rgba(186, 0, 243, 0.7); /* Optionally add a stronger shadow */
-}
-
-body {
-  background: var(--background); /* Background color based on the theme */
-  color: var(--foreground); /* Text color based on the theme */
-  font-family: 'Pacifico', serif, Arial, Helvetica, sans-serif; /* Correct font-family */
+  color: black; /* Text color change on hover */
+  box-shadow: 0px 0px 15px var(--button-hover-bg); /* Optionally add a stronger shadow */
 }
