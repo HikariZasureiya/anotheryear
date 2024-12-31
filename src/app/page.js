@@ -42,21 +42,21 @@ const Displayer = ({ D1, D0, H1, H0, M1, M0, S1, S0 }) => {
         <Digit counter={D1} />
         <Digit counter={D0} />
       </div>
-      <div className="flex items-center mr-2 sm:mr-1 text-[30px] sm:text-[50px] md:text-[60px] lg:text-[70px]">
+      <div className="flex text-black items-center mr-2 sm:mr-1 text-[30px] sm:text-[50px] md:text-[60px] lg:text-[70px]">
         :
       </div>
-      <div className="flex items-center mr-2 sm:mr-1">
+      <div className="flex  items-center mr-2 sm:mr-1">
         <Digit counter={H1} />
         <Digit counter={H0} />
       </div>
-      <div className="flex items-center mr-2 sm:mr-1 text-[30px] sm:text-[50px] md:text-[60px] lg:text-[70px]">
+      <div className="flex text-black items-center mr-2 sm:mr-1 text-[30px] sm:text-[50px] md:text-[60px] lg:text-[70px]">
         :
       </div>
       <div className="flex items-center mr-2 sm:mr-1">
         <Digit counter={M1} />
         <Digit counter={M0} />
       </div>
-      <div className="flex items-center mr-2 sm:mr-1 text-[30px] sm:text-[50px] md:text-[60px] lg:text-[70px]">
+      <div className="flex text-black items-center mr-2 sm:mr-1 text-[30px] sm:text-[50px] md:text-[60px] lg:text-[70px]">
         :
       </div>
       <div className="flex items-center sm:mr-1">
