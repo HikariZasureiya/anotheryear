@@ -93,7 +93,7 @@ const T2 = () => {
           color: 'transparent',
         }}
       >
-        2025
+        2026
       </div>
 
       <Confetti
@@ -120,7 +120,7 @@ export default function Home() {
   useEffect(() => {
     
     const date = new Date();
-    if (date.getFullYear() > 2024) {
+    if (date.getFullYear() > 2025) {
       setCounter(null);
       setText(<T2 />);
     } else {
@@ -130,10 +130,10 @@ export default function Home() {
 
     // Set up interval for countdown
 
-    if (date.getFullYear() <= 2024){
+    if (date.getFullYear() <= 2025){
         const jump = setInterval(() => {
           const newDate = new Date();
-          if (newDate.getFullYear() > 2024) {
+          if (newDate.getFullYear() > 2025) {
 
             setCounter(null);
             
@@ -188,7 +188,7 @@ export default function Home() {
         <div
           className={`${pacifico.className} text-black text-[25px] sm:text-[30px] md:text-[40px] mt-10 mb-5 text-center`}
         >
-          Click to see the memories we made in 2024
+          Click to see the memories we made in 2025
         </div>
 
         <audio ref={bg} src="/assets/rick.mp3" type="audio/mp3" controls className="hidden" onEnded={()=>{
