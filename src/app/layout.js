@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Another Year",
-  description: "Cheers to all the memories we made in 2024",
+  description: "Cheers to all the memories we made in 2025",
 };
 
 export default function RootLayout({ children }) {
